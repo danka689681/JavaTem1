@@ -3,20 +3,40 @@ import java.util.*;
 
 public class Main {
 
-    public static void createStudent(Map students, String lastName, String firstName) {
-        Student student = new Student(lastName, firstName);
-        students.put(student.getFirstName(), student.getLastName());
-    }
 
     public static void main(String[] args) {
-        Map<String, String> students = new TreeMap<>();
-        createStudent(students, "Laz", "Tim");
-        createStudent(students, "Surname", "Al");
-        createStudent(students, "Lopez", "Luke");
-        createStudent(students, "Moore", "Diana");
-        createStudent(students, "Schack", "Vina");
-        createStudent(students, "Schack", "Vina");
+        double start;
+        double time = 0;
+        double end;
+        String string = "";
+        StringBuffer sb = new StringBuffer("");
+        StringBuilder stringBuilder = new StringBuilder("");
 
-        System.out.println(students);
+       // String
+        start = System.currentTimeMillis();
+        for (int i = 0; i < 100000; i++) {
+            string += " I like Java";
+        }
+        end = System.currentTimeMillis();
+        time = end - start;
+        System.out.println("string: " + time);
+
+        // String buffer
+        start = System.currentTimeMillis();
+        for (int i = 0; i < 100000; i++) {
+            sb.append(" I like Java");
+        }
+        end = System.currentTimeMillis();
+        time = end - start;
+        System.out.println("string buffer: " + time);
+
+        // String builder
+        start = System.currentTimeMillis();
+        for (int i = 0; i < 100000; i++) {
+            stringBuilder.append(" I like Java");
+        }
+        end = System.currentTimeMillis();
+        time = end - start;
+        System.out.println("stringbuilder: " + time);
     }
 }
