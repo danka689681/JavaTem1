@@ -9,6 +9,9 @@ public class Person {
         this.email = email;
     }
 
+    public String getName() {
+        return this.name;
+    }
     public String toString() {
         return ("name: " + this.name + "\nemail: " + this.email);
     }
