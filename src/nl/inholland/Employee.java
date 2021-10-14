@@ -11,4 +11,5 @@ public class Employee implements Payable {
     public double getPayout() {
         return grossSalary - grossSalary * tax;
     }
+
 }
